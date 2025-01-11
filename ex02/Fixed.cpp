@@ -54,10 +54,10 @@ int Fixed::getRawBits( void )const
     return(this->_value);
 }
 
-void Fixed::setRawBits( int const raw )
+void Fixed::setRawBits( int const value )
 {
     // std::cout << "setRawBits member function called" << std::endl;
-    this->_value = raw;
+    this->_value = value;
 }
 
 Fixed::~Fixed()
@@ -129,46 +129,46 @@ Fixed	Fixed::operator--()
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed tmp = *this;
+	Fixed before = *this;
 	++this->_value;
-	return (tmp);
+	return (before);
 }
 
 Fixed	Fixed::operator--(int)
 {
-	Fixed tmp = *this;
+	Fixed before = *this;
 	--this->_value;
-	return (tmp);
+	return (before);
 }
 
-Fixed	&Fixed::min(Fixed &first, Fixed &second)
+Fixed	&Fixed::min(Fixed &object1, Fixed &object2)
 {
-	if (first.toFloat() <= second.toFloat())
-		return (first);
+	if (object1.toFloat() <= object2.toFloat())
+		return (object1);
 	else
-		return (second);
+		return (object2);
 }
 
-const Fixed	&Fixed::min(const Fixed &first, const Fixed &second)
+const Fixed	&Fixed::min(const Fixed &object1, const Fixed &object2)
 {
-	if (first.toFloat() <= second.toFloat())
-		return (first);
+	if (object1.toFloat() <= object2.toFloat())
+		return (object1);
 	else
-		return (second);
+		return (object2);
 }
 
-Fixed	&Fixed::max(Fixed &first, Fixed &second)
+Fixed	&Fixed::max(Fixed &object1, Fixed &object2)
 {
-	if (first.toFloat() >= second.toFloat())
-		return (first);
+	if (object1.toFloat() >= object2.toFloat())
+		return (object1);
 	else
-		return (second);
+		return (object2);
 }
 
-const Fixed	&Fixed::max(const Fixed &first, const Fixed &second)
+const Fixed	&Fixed::max(const Fixed &object1, const Fixed &object2)
 {
-	if (first.toFloat() >= second.toFloat())
-		return (first);
+	if (object1.toFloat() >= object2.toFloat())
+		return (object1);
 	else
-		return (second);
+		return (object2);
 }

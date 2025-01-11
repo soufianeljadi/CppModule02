@@ -50,14 +50,14 @@ int Fixed::toInt( void ) const
 
 int Fixed::getRawBits( void )const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return(this->_value);
 }
 
-void Fixed::setRawBits( int const raw )
+void Fixed::setRawBits( int const value )
 {
-    std::cout << "setRawBits member function called" << std::endl;
-    this->_value = raw;
+    // std::cout << "setRawBits member function called" << std::endl;
+    this->_value = value;
 }
 
 Fixed::~Fixed()
